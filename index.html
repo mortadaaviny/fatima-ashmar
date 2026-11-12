@@ -1000,7 +1000,7 @@ $("#openSettings").onclick=()=>{
    <div class="card"><h3>🖼️ ${t("photoTitle")}</h3><button class="btn ghost" id="setPhoto">${t("photoChange")}</button></div>
    <div class="card"><h3>☎️ ${t("emerg")}</h3><input class="inp num" id="phone" type="tel" value="${esc(ph)}" placeholder="+961 …"><button class="btn ghost" id="savePhone" style="margin-top:8px">${t("saveNum")}</button></div>
    <div class="card"><h3>🩺 ${t("team")}</h3><ul class="team">${((S.meta.ctx&&S.meta.ctx.team)||[]).map(m=>`<li><b>${esc(LANG=="ar"?m[0]:m[1])}</b><span class="muted">${esc(LANG=="ar"?m[2]:m[3])}</span></li>`).join("")}</ul></div>
-   ${SB?`<div class="card"><button class="btn ghost full" id="signOut">${LG[LANG||"ar"].out}</button></div>`:""}
+   ${SB&&(window.FATIMA_CONFIG||{}).requireLogin?`<div class="card"><button class="btn ghost full" id="signOut">${LG[LANG||"ar"].out}</button></div>`:""}
    <div class="card"><h3>🤍 ${t("about")}</h3><p class="muted" style="margin:0">${t("aboutText")}</p>${S.mode!="db"?`<div class="note">${t("localMode")}</div>`:""}</div>`);
   $$("#sheetBody [data-lang]").forEach(b=>b.onclick=()=>{setLang(b.dataset.lang);closeSheets()});
   $("#openInstall").onclick=()=>{closeSheets();setTimeout(()=>openInstall(),300)};
@@ -1320,6 +1320,7 @@ function startApp(){
     bn.textContent=window.supabase?"غير مربوط بـ Supabase: عبّي config.js (Project URL + anon key) / Not connected: fill config.js":"تعذّر تحميل Supabase / Could not load the Supabase library";document.body.appendChild(bn);return;
   }
   SB=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey);
+  if(!cfg.requireLogin){startApp();return}   /* open access: anyone with the link */
   bindLogin();
   const {data}=await SB.auth.getSession();
   if(data&&data.session)startApp();else showLogin();
