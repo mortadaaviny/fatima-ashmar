@@ -600,7 +600,7 @@ function subscribe(){
   for(const [col,key] of Object.entries(map)){
     let first=true;
     let sig="";
-    DB.collection(col).onSnapshot(snap=>{if(first&&!snap.metadata.fromCache){first=false;done()}const arr=snap.docs.map(d=>({id:d.id,...d.data()}));const s=JSON.stringify(arr);if(s===sig)return;sig=s;S[key]=arr;schedule(key)},e=>{done()});
+    DB.collection(col).onSnapshot(snap=>{if(first&&!snap.metadata.fromCache){first=false;done()}const arr=snap.docs.map(d=>({id:d.id,...d.data()}));const s=JSON.stringify(arr);if(s===sig)return;sig=s;S[key]=arr;schedule(key)},e=>{done();console.warn(e);toast("Database error: "+((e&&e.message)||e))});
   }
   let f2=true;
   let msig="",csig="";
@@ -1315,7 +1315,9 @@ function startApp(){
   if(!cfg.supabaseUrl||/YOUR_/.test(cfg.supabaseUrl)||!window.supabase){
     /* no Supabase configured: preview mode, data stays on this device */
     DICT=makeDict();if(DICT){wireDict();$("#chatMic").style.display=""}
-    S.mode="local";loadLocal();$("#runAnalysis").style.display="none";return;
+    S.mode="local";loadLocal();$("#runAnalysis").style.display="none";
+    const bn=document.createElement("div");bn.style.cssText="position:fixed;z-index:200;top:0;left:0;right:0;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px;background:#E5484D;color:#fff;font-weight:700;font-size:14px;text-align:center";
+    bn.textContent=window.supabase?"غير مربوط بـ Supabase: عبّي config.js (Project URL + anon key) / Not connected: fill config.js":"تعذّر تحميل Supabase / Could not load the Supabase library";document.body.appendChild(bn);return;
   }
   SB=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey);
   bindLogin();
