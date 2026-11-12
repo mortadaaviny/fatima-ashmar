@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0B2545">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="فاطمة">
-<title>فاطمة · Fatima</title>
+<title>فاطمة</title>
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -334,7 +334,7 @@ X
 .instHead{display:flex;align-items:center;gap:14px;margin:4px 0 10px}
 .instIcon{width:60px;height:60px;border-radius:18px;flex:none;background:#fff center/cover no-repeat;border:2px solid #fff;box-shadow:0 8px 22px rgba(11,37,69,.18),0 0 20px rgba(91,192,248,.5)}
 .instHead b{display:block;font-size:18px;color:var(--navy)}
-#segInst button{font-size:12.5px;padding:9px 2px}
+.instDev{display:inline-block;margin:8px 0 2px;padding:5px 14px;border-radius:999px;background:rgba(30,111,217,.1);color:var(--blue);font-weight:800;font-size:14px}
 #instSteps li{line-height:1.7}
 #instSteps li b{color:var(--navy)}
 /* login */
@@ -478,7 +478,7 @@ X
    I18N
 ============================================================ */
 const T={
-ar:{appName:"متابعة فاطمة",photoTitle:"صورة فاطمة",photoChange:"تعديل أو تغيير الصورة",photoPick:"اختر صورة",photoRotate:"تدوير",photoHint:"اسحب الصورة لتحرّكها، واستعمل الشريط للتكبير",photoReset:"رجّع الصورة الأصلية",enter:"ادخل",recordVisit:"تسجيل زيارة",recStart:"ابدأ التسجيل",recStop:"إيقاف التسجيل",recHintLive:"كلام الطبيب بيتحوّل لنص مباشرة وأنت عم تسجّل",recHintFile:"بيفتح مسجّل الصوت بالتلفون، وبعدها التسجيل بينضاف هون",orUpload:"أو ارفع تسجيل أو ملف",summarizeSave:"لخّص واحفظ",visitText:"كلام الطبيب / ملاحظاتك",fatima:"فاطمة",stDay:"يوم المتابعة",stCr:"آخر كرياتينين",stEv:"سجلات",todayAnalysis:"تحليل اليوم",noAnalysis:"اكبس «حلّل الآن» ليقرأ Claude آخر المستجدات واليوميات ويعطيك ملخصاً ومؤشرات وأسئلة للطبيب.",analyzeNow:"حلّل الآن",disclaimer:"التحليل للفهم والمتابعة فقط، ولا يحلّ محلّ قرار الفريق الطبي.",latest:"آخر المستجدات",seeTimeline:"شوف الخط الزمني كامل",testsTitle:"الفحوصات والطبيب",upload:"رفع",segTests:"فحوصات",segDoctor:"الطبيب",segAll:"الكل",indicators:"المؤشرات",addLab:"+ أضف قيمة تحليل",diaryTitle:"اليوميات والعلاج",segDaily:"يوميات",segTreat:"العلاج",add:"إضافة",chatTitle:"اسأل Claude",chatPh:"اكتب سؤالك…",
+ar:{appName:"فاطمة",photoTitle:"صورة فاطمة",photoChange:"تعديل أو تغيير الصورة",photoPick:"اختر صورة",photoRotate:"تدوير",photoHint:"اسحب الصورة لتحرّكها، واستعمل الشريط للتكبير",photoReset:"رجّع الصورة الأصلية",enter:"ادخل",recordVisit:"تسجيل زيارة",recStart:"ابدأ التسجيل",recStop:"إيقاف التسجيل",recHintLive:"كلام الطبيب بيتحوّل لنص مباشرة وأنت عم تسجّل",recHintFile:"بيفتح مسجّل الصوت بالتلفون، وبعدها التسجيل بينضاف هون",orUpload:"أو ارفع تسجيل أو ملف",summarizeSave:"لخّص واحفظ",visitText:"كلام الطبيب / ملاحظاتك",fatima:"فاطمة",stDay:"يوم المتابعة",stCr:"آخر كرياتينين",stEv:"سجلات",todayAnalysis:"تحليل اليوم",noAnalysis:"اكبس «حلّل الآن» ليقرأ Claude آخر المستجدات واليوميات ويعطيك ملخصاً ومؤشرات وأسئلة للطبيب.",analyzeNow:"حلّل الآن",disclaimer:"التحليل للفهم والمتابعة فقط، ولا يحلّ محلّ قرار الفريق الطبي.",latest:"آخر المستجدات",seeTimeline:"شوف الخط الزمني كامل",testsTitle:"الفحوصات والطبيب",upload:"رفع",segTests:"فحوصات",segDoctor:"الطبيب",segAll:"الكل",indicators:"المؤشرات",addLab:"+ أضف قيمة تحليل",diaryTitle:"اليوميات والعلاج",segDaily:"يوميات",segTreat:"العلاج",add:"إضافة",chatTitle:"اسأل Claude",chatPh:"اكتب سؤالك…",
  types:{scan:"صور وأشعة",lab:"تحاليل",visit:"زيارة طبيب",treatment:"علاج",procedure:"إجراء طبي",milestone:"حدث",note:"ملاحظة"},
  summary:"الملخص",analysis:"تحليل Claude",transcript:"التفريغ / التقرير",files:"الملفات",doctor:"الطبيب",edit:"تعديل",del:"حذف",
  newRecord:"سجل جديد",type:"النوع",date:"التاريخ",time:"الوقت",title:"العنوان",notes:"ملاحظات / نص التقرير / تفريغ الزيارة",pickFiles:"اختر صور التقرير أو PDF أو تسجيل صوتي",analyzeSave:"حلّل واحفظ",saveOnly:"احفظ بدون تحليل",dictate:"إملاء مباشر",stop:"إيقاف",
@@ -498,7 +498,7 @@ ar:{appName:"متابعة فاطمة",photoTitle:"صورة فاطمة",photoChan
  labs:{creatinine:"كرياتينين",wbc:"كريات بيضا",hb:"هيموغلوبين",plt:"صفائح",anc:"ANC",weight:"الوزن"},labName:"اسم التحليل",labVal:"القيمة",labUnit:"الوحدة",save:"احفظ",
  daysOld:(w,d)=>`عمرها ${w} أسابيع و${d} ${d==1?"يوم":"أيام"}`,dayN:n=>`${n}`,updated:"آخر تحديث",
  open:"اكبس للتفاصيل",fileUp:"عم يرفع الملفات…",pdfRead:"عم يقرأ الـ PDF…"},
-en:{appName:"Fatima's Care",photoTitle:"Fatima's photo",photoChange:"Edit or change the photo",photoPick:"Choose photo",photoRotate:"Rotate",photoHint:"Drag to move, use the slider to zoom",photoReset:"Restore original photo",enter:"Enter",recordVisit:"Record visit",recStart:"Start recording",recStop:"Stop recording",recHintLive:"The doctor's words turn into text live while you record",recHintFile:"Opens your phone's voice recorder; the recording is then added here",orUpload:"or upload a recording or file",summarizeSave:"Summarize & save",visitText:"What the doctor said / your notes",fatima:"Fatima",stDay:"Day of care",stCr:"Last creatinine",stEv:"Records",todayAnalysis:"Today's analysis",noAnalysis:"Tap “Analyze now” and Claude will read the latest records and diary, then give a summary, indicators and questions for the doctor.",analyzeNow:"Analyze now",disclaimer:"Analysis is for understanding and follow-up only; it does not replace the medical team's decisions.",latest:"Latest updates",seeTimeline:"See full timeline",testsTitle:"Tests & Doctor",upload:"Upload",segTests:"Tests",segDoctor:"Doctor",segAll:"All",indicators:"Indicators",addLab:"+ Add a lab value",diaryTitle:"Diary & Treatment",segDaily:"Diary",segTreat:"Treatment",add:"Add",chatTitle:"Ask Claude",chatPh:"Type your question…",
+en:{appName:"فاطمة",photoTitle:"Fatima's photo",photoChange:"Edit or change the photo",photoPick:"Choose photo",photoRotate:"Rotate",photoHint:"Drag to move, use the slider to zoom",photoReset:"Restore original photo",enter:"Enter",recordVisit:"Record visit",recStart:"Start recording",recStop:"Stop recording",recHintLive:"The doctor's words turn into text live while you record",recHintFile:"Opens your phone's voice recorder; the recording is then added here",orUpload:"or upload a recording or file",summarizeSave:"Summarize & save",visitText:"What the doctor said / your notes",fatima:"Fatima",stDay:"Day of care",stCr:"Last creatinine",stEv:"Records",todayAnalysis:"Today's analysis",noAnalysis:"Tap “Analyze now” and Claude will read the latest records and diary, then give a summary, indicators and questions for the doctor.",analyzeNow:"Analyze now",disclaimer:"Analysis is for understanding and follow-up only; it does not replace the medical team's decisions.",latest:"Latest updates",seeTimeline:"See full timeline",testsTitle:"Tests & Doctor",upload:"Upload",segTests:"Tests",segDoctor:"Doctor",segAll:"All",indicators:"Indicators",addLab:"+ Add a lab value",diaryTitle:"Diary & Treatment",segDaily:"Diary",segTreat:"Treatment",add:"Add",chatTitle:"Ask Claude",chatPh:"Type your question…",
  types:{scan:"Imaging",lab:"Labs",visit:"Doctor visit",treatment:"Treatment",procedure:"Procedure",milestone:"Event",note:"Note"},
  summary:"Summary",analysis:"Claude's analysis",transcript:"Transcript / report",files:"Files",doctor:"Doctor",edit:"Edit",del:"Delete",
  newRecord:"New record",type:"Type",date:"Date",time:"Time",title:"Title",notes:"Notes / report text / visit transcript",pickFiles:"Choose report photos, PDF or a voice recording",analyzeSave:"Analyze & save",saveOnly:"Save without analysis",dictate:"Live dictation",stop:"Stop",
@@ -1043,14 +1043,14 @@ function detectDevice(){
 }
 function isStandalone(){try{return matchMedia("(display-mode: standalone)").matches||navigator.standalone===true}catch(e){return false}}
 function openInstall(){
-  const I=INST[LANG||"ar"],keys=["ios","and","mac","win"];
+  const I=INST[LANG||"ar"],dev=detectDevice();
   openSheet(I.title,`<div class="instHead"><div class="instIcon" style="background-image:url('${esc(PHOTO)}')"></div><div><b>${t("appName")}</b><div class="muted">${I.sub}</div></div></div>
    <button class="btn pri full" id="instNow" style="margin:6px 0 4px" ${deferredInstall?"":"hidden"}>${I.now}</button>
-   <div class="seg" id="segInst"><span class="pill"></span>${keys.map(k=>`<button data-k="${k}">${esc(I.tabs[k])}</button>`).join("")}</div>
+   <div class="instDev">${esc(I.tabs[dev])}</div>
    <ol class="steps" id="instSteps"></ol>
    <div class="note">${t("installNote")}</div>
    <button class="btn ghost full" id="instGot" style="margin-top:12px">${I.got}</button>`);
-  initSeg($("#segInst"),k=>{$("#instSteps").innerHTML=I.steps[k].map(s=>`<li>${s}</li>`).join("")},detectDevice());
+  $("#instSteps").innerHTML=I.steps[dev].map(s=>`<li>${s}</li>`).join("");
   $("#instGot").onclick=closeSheets;
   $("#instNow").onclick=async()=>{if(!deferredInstall)return;try{deferredInstall.prompt();await deferredInstall.userChoice}catch(e){}deferredInstall=null;closeSheets()};
 }
@@ -1146,7 +1146,7 @@ function observe(){if(!io)io=new IntersectionObserver(es=>es.forEach(e=>{if(e.is
 function applyLang(){
   document.documentElement.lang=LANG;document.documentElement.dir=LANG=="ar"?"rtl":"ltr";
   $$("[data-t]").forEach(el=>{const v=t(el.dataset.t);if(typeof v=="string")el.textContent=v});
-  $("#chatIn").placeholder=t("chatPh");document.title=LANG=="ar"?"فاطمة":"Fatima";
+  $("#chatIn").placeholder=t("chatPh");document.title="فاطمة";
 }
 function setLang(l){LANG=l;try{localStorage.setItem("fatima_lang_v1",l)}catch(e){}applyLang();typeHadith();renderAll();renderQuick();go(curView)}
 function renderAll(){renderHome();if(curView=="tests")renderTests();if(curView=="diary")renderDiary();observe()}
@@ -1186,8 +1186,8 @@ boot();markLang();
 ============================================================ */
 let SB=null;
 const LG={
-ar:{title:"تسجيل الدخول",sub:"متابعة فاطمة · خاص بالعائلة",email:"البريد الإلكتروني",pass:"كلمة السر",btn:"دخول",wait:"عم يدخّل…",err:"البريد أو كلمة السر غلط.",out:"تسجيل الخروج"},
-en:{title:"Sign in",sub:"Fatima's Care · family only",email:"Email",pass:"Password",btn:"Sign in",wait:"Signing in…",err:"Wrong email or password.",out:"Sign out"}
+ar:{title:"تسجيل الدخول",sub:"خاص بالعائلة",email:"البريد الإلكتروني",pass:"كلمة السر",btn:"دخول",wait:"عم يدخّل…",err:"البريد أو كلمة السر غلط.",out:"تسجيل الخروج"},
+en:{title:"Sign in",sub:"Family only",email:"Email",pass:"Password",btn:"Sign in",wait:"Signing in…",err:"Wrong email or password.",out:"Sign out"}
 };
 
 /* documents stored as JSON rows in one table: records(collection, id, data) */
